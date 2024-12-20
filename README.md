@@ -1,8 +1,15 @@
 # stm32-esp8266-rs
 A driver lib fro ESP01 (ESP8266).
 
+add dependency to your Cargo.toml
+```
+stm32-esp8266-rs = { git = "https://github.com/FlyingYu-Z/stm32-esp8266-rs.git", branch = "main"}
 ```
 
+import:
+
+```rust
+use stm32_esp8266_rs::{CipStatus, ESP8266};
 ```
 
 # Example
