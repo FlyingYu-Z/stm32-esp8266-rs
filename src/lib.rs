@@ -1,3 +1,5 @@
+#![no_std]
+
 use core::fmt::Write;
 use core::str::FromStr;
 use core::{cell::RefCell, str};
