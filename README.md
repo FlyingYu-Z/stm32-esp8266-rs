@@ -1,5 +1,5 @@
 # stm32-esp8266-rs
-A driver lib fro ESP01 (ESP8266).
+A driver lib for ESP01 (ESP8266).
 
 add dependency to your Cargo.toml
 ```
@@ -71,7 +71,10 @@ use stm32_esp8266_rs::{CipStatus, ESP8266};
                 hprintln!("successfully connected wifi");
             }
             CipStatus::ServerConnected => {
-                // do something
+                let receive = esp8266.cip_receive();
+                if receive.is_ok() {
+                    // do something
+                }
             }
             CipStatus::WifiConnected | CipStatus::ServerDisconnected => {
                 while esp8266.connect_server("TCP", "bemfa.com", 8344).is_err() {
